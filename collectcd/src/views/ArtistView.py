@@ -7,9 +7,10 @@ artist_schema = ArtistSchema()
 
 
 @artist_api.route("/", methods=["POST"])
+@Auth.auth_reqired
 def create():
     """
-    Create Aetist Function
+    Create Artist Function
     :return: json
     """
     req_data = request.get_json()
