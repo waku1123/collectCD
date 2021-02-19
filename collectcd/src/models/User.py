@@ -63,9 +63,7 @@ class User(db.Model):
         return "<id {}>".format(self.id)
 
     def __generate_hash(self, password):
-        return bcrypt.generate_password_hash(password=password, rounds=10).decode(
-            "utf-8"
-        )
+        return bcrypt.generate_password_hash(password=password, rounds=10).decode("utf-8")
 
     def check_hash(self, password):
         return bcrypt.check_password_hash(pw_hash=self.password, password=password)

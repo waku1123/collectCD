@@ -57,6 +57,7 @@ class AlbumSchema(Schema):
     """
     Album Schema
     """
+
     id = fields.Int(dump_only=True)
     artist_id = fields.Int(dump_only=True, required=True)
     order = fields.Int(dump_only=True)

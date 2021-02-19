@@ -41,9 +41,7 @@ class Auth:
         """
         re = {"data": {}, "error": {}}
         try:
-            payload = jwt.decode(
-                jwt=token, key=os.getenv("JWT_SECRET_KEY"), algorithms="HS256"
-            )
+            payload = jwt.decode(jwt=token, key=os.getenv("JWT_SECRET_KEY"), algorithms="HS256")
             re["data"] = {"user_id": payload["sub"]}
             return re
         except jwt.ExpiredSignatureError as e1:
@@ -67,9 +65,7 @@ class Auth:
                 return Response(
                     mimetype="application/json",
                     response=json.dumps(
-                        {
-                            "error": "Authentication token is not available. please login to get one"
-                        }
+                        {"error": "Authentication token is not available. please login to get one"}
                     ),
                     status=400,
                 )
@@ -87,9 +83,7 @@ class Auth:
             if not check_user:
                 return Response(
                     mimetype="application/json",
-                    response=json.dumps(
-                        {"error": "user does not exist, invalid token"}
-                    ),
+                    response=json.dumps({"error": "user does not exist, invalid token"}),
                     status=400,
                 )
             g.user = {"id": user_id}
