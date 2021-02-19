@@ -17,7 +17,7 @@ class Album(db.Model):
     name = db.Column(db.Integer, nullable=False)
     publish_year = db.Column(db.Integer)
     publish_month = db.Column(db.Integer)
-    possession = db.Column(db.Boolean)
+    possession = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 

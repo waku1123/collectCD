@@ -6,7 +6,7 @@ album_api = Blueprint("albums", __name__)
 album_schema = AlbumSchema()
 
 
-@album_api.route("/", methos=["POST"])
+@album_api.route("/", methods=["POST"])
 @Auth.auth_reqired
 def create():
     """
@@ -56,7 +56,7 @@ def get_a_album(album_id):
     album = Album.get_one_album(album_id)
     if not album:
         return custom_response({"error": "album not found"}, 400)
-    ser_album = album_schema.dump(album_id)
+    ser_album = album_schema.dump(album)
     return custom_response(ser_album, 200)
 
 
