@@ -27,7 +27,7 @@ CREATE TABLE "public"."albums" (
     "name" varchar NOT NULL,
     "publish_year" int2,
     "publish_month" int2,
-    "posession" bool NOT NULL DEFAULT false,
+    "possession" bool NOT NULL DEFAULT false,
     "created_at" timestamp(0) NOT NULL DEFAULT '2021-01-01 00:00:00'::timestamp without time zone,
     "updated_at" timestamp(0),
     CONSTRAINT "albums_artist_id_fkey" FOREIGN KEY ("artist_id") REFERENCES "public"."artists"("id"),
