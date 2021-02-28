@@ -14,12 +14,12 @@ class Album(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     artist_id = db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
     order = db.Column(db.Integer)
-    name = db.Column(db.Integer, nullable=False)
-    publish_year = db.Column(db.Integer)
-    publish_month = db.Column(db.Integer)
-    possession = db.Column(db.Boolean, default=False)
-    created_at = db.Column(db.DateTime)
-    updated_at = db.Column(db.DateTime)
+    name = db.Column(db.String(255), nullable=False)
+    publish_year = db.Column(db.Integer, nullable=True)
+    publish_month = db.Column(db.Integer, nullable=True)
+    possession = db.Column(db.Boolean, nullable=True, default=False)
+    created_at = db.Column(db.DateTime, nullable=False)
+    updated_at = db.Column(db.DateTime, nullable=True)
 
     def __init__(self, data: Dict):
         self.artist_id = data.get("artist_id")
