@@ -64,6 +64,6 @@ class AlbumSchema(Schema):
     name = fields.Str(required=True)
     publish_year = fields.Int(dump_only=True)
     publish_month = fields.Int(dump_only=True)
-    possession = fields.Boolean(dump_only=True)
+    possession = fields.Boolean()
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
