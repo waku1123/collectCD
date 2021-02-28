@@ -70,7 +70,7 @@ def update(album_id):
     """
     req_data = request.get_json()
     data = album_schema.load(req_data, partial=True)
-    error = True
+    error = None
     if error:
         return custom_response(error, 400)
     album = Album.get_one_album(album_id)
