@@ -60,7 +60,7 @@ def get_a_album(album_id):
     return custom_response(ser_album, 200)
 
 
-@album_api.route("/update/<int:album_id>", methods=["POST"])
+@album_api.route("/update/<int:album_id>", methods=["PATCH"])
 @Auth.auth_reqired
 def update(album_id):
     """
