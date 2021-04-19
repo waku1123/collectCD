@@ -1,9 +1,6 @@
+from . import contants
 import os
 from typing import Dict, Final
-
-os.environ["FLASK_ENV"] = "development"
-os.environ["DATABASE_URL"] = "postgresql://pguser:pguser008@192.168.10.108:5432/collectCD"
-os.environ["JWT_SECRET_KEY"] = "hogefugamogepiyo"
 
 
 class Development(object):
@@ -20,7 +17,7 @@ class Development(object):
 
 class Production(object):
     """
-    Production environment confioguration
+    Production environment configuration
     """
 
     DEBUG: Final[bool] = False
