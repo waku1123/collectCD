@@ -17,7 +17,7 @@ class Album(db.Model):
     name = db.Column(db.Integer, nullable=False)
     publish_year = db.Column(db.Integer)
     publish_month = db.Column(db.Integer)
-    possession = db.Column(db.Boolean, default=False)
+    # possession = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 
@@ -27,7 +27,7 @@ class Album(db.Model):
         self.name = data.get("name")
         self.publish_year = data.get("publish_year")
         self.publish_month = data.get("publish_month")
-        self.possession = data.get("possession")
+        # self.possession = data.get("possession")
         self.created_at = datetime.datetime.now()
         self.updated_at = datetime.datetime.now()
 
@@ -64,6 +64,6 @@ class AlbumSchema(Schema):
     name = fields.Str(required=True)
     publish_year = fields.Int(dump_only=True)
     publish_month = fields.Int(dump_only=True)
-    possession = fields.Boolean()
+    # possession = fields.Boolean()
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)

@@ -4,6 +4,7 @@ from .models import db, bcrypt
 from .views.UserView import user_api as user_blueprint
 from .views.ArtistView import artist_api as artist_blueprint
 from .views.AlbumView import album_api as album_blueprint
+from .views.CollectionView import collection_api as collection_blueprint
 
 
 def create_app(env_name: str) -> Flask:
@@ -22,6 +23,7 @@ def create_app(env_name: str) -> Flask:
     app.register_blueprint(user_blueprint, url_prefix="/api/v1/users/")
     app.register_blueprint(artist_blueprint, url_prefix="/api/v1/artists/")
     app.register_blueprint(album_blueprint, url_prefix="/api/v1/albums/")
+    app.register_blueprint(collection_blueprint, url_prefix="/api/v1/collections/")
 
     @app.route("/", methods=["GET"])
     def index():
